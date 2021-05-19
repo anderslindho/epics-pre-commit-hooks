@@ -47,6 +47,7 @@ def fix_file(file_obj: IO[bytes]) -> int:
             file_obj.write(b'\n')
             return 1
 
+    # TODO: Refactor
     file_obj.seek(-2, os.SEEK_CUR)
     second_to_last = file_obj.read(1)
     last = file_obj.read(1)
