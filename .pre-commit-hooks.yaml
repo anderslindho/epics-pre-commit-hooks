@@ -1,0 +1,7 @@
+ - id: add-trailing-newline
+   name: Add Trailing Newline
+   description: Ensures that a file is either empty, or ends with one blank line.
+   entry: add-trailing-newline
+   language: sh
+   types: [text]
+   stages: [commit, push, manual]
