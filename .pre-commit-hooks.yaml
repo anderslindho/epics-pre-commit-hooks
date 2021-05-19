@@ -1,7 +1,7 @@
- - id: add-trailing-newline
-   name: Add Trailing Newline
+ - id: add-trailing-blank-line
+   name: Add Trailing Blank line
    description: Ensures that a file always ends with one blank line.
-   entry: add-trailing-newline
+   entry: add-trailing-blank-line
    language: python
    types: [text]
    stages: [commit, push, manual]

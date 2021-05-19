@@ -41,6 +41,7 @@ def fix_file(file_obj: IO[bytes]) -> int:
         if remaining == sequence:
             return 0
         elif remaining.startswith(sequence):
+            # Accept any \r|\n terminator and append one \n
             file_obj.seek(position + 1)
             file_obj.truncate()
             file_obj.write(b'\n')
@@ -50,6 +51,11 @@ def fix_file(file_obj: IO[bytes]) -> int:
     second_to_last = file_obj.read(1)
     last = file_obj.read(1)
     if last == b'\n' and second_to_last not in {b'\n', b'\r'}:
+        file_obj.write(b'\n')
+        return 1
+    elif last == second_to_last == b'\r':
+        file_obj.seek(-1, os.SEEK_CUR)
+        file_obj.truncate()
         file_obj.write(b'\n')
         return 1
 
