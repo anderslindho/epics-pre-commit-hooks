@@ -2,8 +2,8 @@ import io
 
 import pytest
 
-from epics_pre_commit_hooks.add_trailing_blank_line_fixer import fix_file
-from epics_pre_commit_hooks.add_trailing_blank_line_fixer import main
+from pre_commit_hooks.add_trailing_blank_line_fixer import fix_file
+from pre_commit_hooks.add_trailing_blank_line_fixer import main
 
 
 # Input, expected return value, expected output
